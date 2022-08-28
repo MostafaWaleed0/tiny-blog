@@ -1,0 +1,502 @@
+:root {
+  --clr-primary-600: #0098fe;
+  --clr-primary-400: #ff85dc;
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-200: #eaeaea;
+  --clr-neutral-900: #000000;
+  --fs-100: 0.75rem;
+  --fs-200: 0.875rem;
+  --fs-300: 1rem;
+  --fs-400: 1.25rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-700: 2.5rem;
+  --fs-800: 3.25rem;
+  --fs-900: 4rem;
+  --space-50: 0.5rem;
+  --space-100: 0.75rem;
+  --space-200: 1rem;
+  --space-300: 1.3125rem;
+  --space-400: 1.75rem;
+  --space-500: 2.375rem;
+  --space-600: 3rem;
+  --space-700: 3.625rem;
+  --space-800: 5rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: -apple-system;
+  font-size: var(--fs-400);
+  font-weight: 400;
+  color: var(--clr-neutral-900);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--fs-900);
+  max-width: 22.5ch;
+  line-height: 1;
+}
+
+p {
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-400);
+  margin: 0;
+}
+.nav > li {
+  margin: 0.15625rem 0.5rem;
+  text-transform: capitalize;
+}
+.nav > li a:not(:hover) {
+  text-decoration: none;
+}
+
+.site-head {
+  padding-block: var(--space-300);
+}
+.site-head__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.site-head__navigation {
+  display: flex;
+  padding: var(--space-100);
+  overflow: auto;
+}
+
+.site-foot {
+  --region-padding: var(--space-600);
+}
+.site-foot__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.post {
+  --flow-space: var(--space-600);
+  max-width: 45rem;
+  width: 100%;
+  margin-inline: auto;
+}
+.post :where(p, strong, em, li, figcaption, blockquote) {
+  max-width: 65ch;
+}
+.post :where(h2, h3) {
+  --flow-space: var(--space-800);
+}
+:where(.post ol, .post ul) > li + li {
+  margin-block: var(--space-100);
+}
+.post :where(h2 + p, h3 + p, h2 + ul, h3 + ul) {
+  --flow-space: var(--space-300);
+}
+.post :where(h4 + p, h4 + ul) {
+  --flow-space: var(--space-200);
+}
+.post :where(h2 + h3) {
+  --flow-space: var(--space-400);
+}
+
+.button {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-300);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+  padding: 0.8em 2em;
+  outline: 0;
+  border: 0;
+  border-radius: 0.625em;
+  text-transform: capitalize;
+}
+
+.pill {
+  font-size: var(--fs-300);
+  font-weight: 500;
+  white-space: nowrap;
+  padding-inline: var(--space-50);
+  text-transform: capitalize;
+  border: 2px solid var(--clr-neutral-900);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.weight-base {
+  font-weight: 400;
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+.weight-bold {
+  font-weight: 700;
+}
+
+.font-base {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+    sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-block-50 {
+  margin-block: 0.5rem;
+}
+.margin-block-start-50 {
+  margin-block-start: 0.5rem;
+}
+.margin-block-end-50 {
+  margin-block-end: 0.5rem;
+}
+
+.margin-block-100 {
+  margin-block: 0.75rem;
+}
+.margin-block-start-100 {
+  margin-block-start: 0.75rem;
+}
+.margin-block-end-100 {
+  margin-block-end: 0.75rem;
+}
+
+.margin-block-200 {
+  margin-block: 1rem;
+}
+.margin-block-start-200 {
+  margin-block-start: 1rem;
+}
+.margin-block-end-200 {
+  margin-block-end: 1rem;
+}
+
+.margin-block-300 {
+  margin-block: 1.3125rem;
+}
+.margin-block-start-300 {
+  margin-block-start: 1.3125rem;
+}
+.margin-block-end-300 {
+  margin-block-end: 1.3125rem;
+}
+
+.margin-block-400 {
+  margin-block: 1.75rem;
+}
+.margin-block-start-400 {
+  margin-block-start: 1.75rem;
+}
+.margin-block-end-400 {
+  margin-block-end: 1.75rem;
+}
+
+.margin-block-500 {
+  margin-block: 2.375rem;
+}
+.margin-block-start-500 {
+  margin-block-start: 2.375rem;
+}
+.margin-block-end-500 {
+  margin-block-end: 2.375rem;
+}
+
+.margin-block-600 {
+  margin-block: 3rem;
+}
+.margin-block-start-600 {
+  margin-block-start: 3rem;
+}
+.margin-block-end-600 {
+  margin-block-end: 3rem;
+}
+
+.margin-block-700 {
+  margin-block: 3.625rem;
+}
+.margin-block-start-700 {
+  margin-block-start: 3.625rem;
+}
+.margin-block-end-700 {
+  margin-block-end: 3.625rem;
+}
+
+.margin-block-800 {
+  margin-block: 5rem;
+}
+.margin-block-start-800 {
+  margin-block-start: 5rem;
+}
+.margin-block-end-800 {
+  margin-block-end: 5rem;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.auto-grid > * {
+  max-width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.auto-grid > * + * {
+  margin-top: var(--space-400);
+}
+@supports (display: grid) {
+  .auto-grid {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--auto-grid-min-size, 19rem), 1fr)
+    );
+    grid-gap: var(--space-400);
+  }
+  .auto-grid > * {
+    max-width: unset;
+    margin: unset;
+  }
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, var(--space-300));
+}
+
+.wrapper {
+  width: min(100% - 2rem, 71.875rem);
+  margin-inline: auto;
+}
+
+.region {
+  padding-block: var(--region-padding, var(--space-800));
+}
+
+/* PrismJS 1.23.0
+https://prismjs.com/download.html?themes#themes=prism-tomorrow&languages=markup+css+clike+javascript */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
