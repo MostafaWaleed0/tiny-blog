@@ -9,5 +9,5 @@ export interface PostPageType {
 }
 
 export interface BlogPostType {
-  [key: string]: any;
+  [key: string]: Array<PostPageType>;
 }
