@@ -1,11 +1,14 @@
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 export interface PostPageType {
+  slug: string;
   frontmatter: {
-    title: string | number;
-    image: string | number | boolean;
-    description: string | number | boolean;
-    date: number;
+    banner: string;
+    title: string;
+    image: string;
+    description: string;
+    date: string;
   };
-  content: any;
+  content: MDXRemoteSerializeResult;
 }
 
 export interface BlogPostType {
